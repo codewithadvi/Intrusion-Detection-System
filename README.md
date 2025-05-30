@@ -76,16 +76,18 @@ For more information about the dataset: [CICIDS Dataset](https://www.unb.ca/cic/
    - Handle missing values
    - Optimize memory usage (float32/int32 conversion)
    - Encode categorical labels using `LabelEncoder`
-## Results (Sample)
-Accuracy
-~90%
-Precision (avg)
-~0.88
-Recall (avg)
-~0.85
-F1-Score (avg)
-~0.86
-Note: Scores may vary depending on dataset sampling and model configuration. 
+##  Results 
+
+The model achieved the following performance metrics on the test set:
+
+| Metric              | Score      |
+|---------------------|------------|
+| **Accuracy**        | ~90%       |
+| **Precision (avg)** | ~0.88      |
+| **Recall (avg)**    | ~0.85      |
+| **F1-Score (avg)**  | ~0.86      |
+
+> ⚠️ *Note:* These scores may vary depending on dataset sampling, feature selection, and model hyperparameters.
 
 ## Future Improvements
 Incorporate more features for better accuracy
