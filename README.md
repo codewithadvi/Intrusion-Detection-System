@@ -1,86 +1,98 @@
-# Intrusion-Detection-System-Hacknova-2024-
-This project implements an Intrusion Detection System (IDS) using machine learning techniques. The goal of the system is to classify different types of network attacks using network traffic data. The model is trained using a Random Forest classifier to detect various network attacks based on labeled data and its associated features. Additionally, we are using Streamlit to create an interactive web dashboard that allows users to visualize the data and model predictions.
+# 🔒 Intrusion Detection System - Hacknova 2024
 
-## Libraries Used
+**Intrusion-Detection-System-Hacknova-2024** is a **Machine Learning-based Network Intrusion Detection System (IDS)** developed for the **Hacknova 2024** competition. This project leverages network traffic data to identify and classify various types of cyber attacks using a **Random Forest Classifier**, and provides an intuitive, interactive dashboard built with **Streamlit**.
 
-This project uses several Python libraries for data processing, machine learning, model evaluation, and dashboard visualization:
+---
 
-### 1. **Pandas**
-   - **Purpose**: Used for data manipulation and analysis. It provides data structures like `DataFrame` for handling and analyzing structured data efficiently.
-   - **Installation**: `pip install pandas`
-   - **Usage**: Loading and preprocessing the dataset, handling missing values, and performing feature extraction.
-   
-### 2. **NumPy**
-   - **Purpose**: Provides support for large, multi-dimensional arrays and matrices, along with a large collection of high-level mathematical functions to operate on these arrays.
-   - **Installation**: `pip install numpy`
-   - **Usage**: Used for numerical operations like creating arrays, performing calculations, and handling feature data.
+## 🧠 Project Overview
 
-### 3. **Scikit-learn**
-   - **Purpose**: A machine learning library that includes simple and efficient tools for data mining and data analysis. It includes algorithms for classification, regression, clustering, and more.
-   - **Installation**: `pip install scikit-learn`
-   - **Usage**: 
-     - **LabelEncoder**: For encoding categorical variables into numeric values.
-     - **RandomForestClassifier**: Used as the model for training and predicting network attack types.
-     - **train_test_split**: For splitting the dataset into training and testing sets.
-     - **accuracy_score** and **classification_report**: For model evaluation.
+The system detects different types of network intrusions by analyzing key features extracted from network flows such as:
 
-### 4. **Joblib**
-   - **Purpose**: Used for serializing Python objects (saving and loading models and transformers).
-   - **Installation**: `pip install joblib`
-   - **Usage**: Saving and loading the trained machine learning model and label encoder to disk.
+- Flow Duration
+- Total Forward Packets
+- Fwd Packets Length Total
+- Flow Bytes per Second
+- Flow Packets per Second
 
-### 5. **pyarrow**
-   - **Purpose**: This library is used for handling the Parquet file format, enabling fast data processing.
-   - **Installation**: `pip install pyarrow`
-   - **Usage**: Reading Parquet files for efficient data loading.
+Using these features, the model classifies network traffic into categories like **benign traffic** or specific attack types (e.g., DDoS, Portscan, Botnet, Webattack, etc.).
 
-### 6. **Streamlit**
-   - **Purpose**: Used for creating interactive web applications and dashboards for machine learning projects.
-   - **Installation**: `pip install streamlit`
-   - **Usage**: Building a user-friendly interface for the IDS, allowing users to input data and visualize results. Streamlit will display model predictions and graphs dynamically.
+This project includes two main components:
+1. **Model Training Script**: Trains the Random Forest classifier on a sampled dataset.
+2. **Streamlit Dashboard**: Provides an interactive UI for real-time prediction and data visualization.
 
-### 7. **Matplotlib**
-   - **Purpose**: A plotting library used for creating static, animated, and interactive visualizations in Python.
-   - **Installation**: `pip install matplotlib`
-   - **Usage**: Used for creating various plots such as bar charts, line plots, and histograms to visualize data and model performance.
+---
 
-### 8. **Seaborn**
-   - **Purpose**: A Python data visualization library based on Matplotlib, which provides a high-level interface for drawing attractive statistical graphics.
-   - **Installation**: `pip install seaborn`
-   - **Usage**: Used for creating more advanced visualizations like correlation heatmaps and distributions.
+## 📦 Features
 
-### 9. **Plotly**
-   - **Purpose**: A graphing library that makes interactive, publication-quality graphs online.
-   - **Installation**: `pip install plotly`
-   - **Usage**: Used for creating interactive plots, especially for visualizing model predictions and performance metrics.
+✅ Machine Learning Model trained using **Random Forest Classifier**  
+✅ Predicts multiple types of network attacks  
+✅ Interactive **Streamlit Dashboard** for predictions and visualizations  
+✅ Includes **bar charts**, **pie charts**, and **correlation heatmap** for insights  
+✅ Uses **LabelEncoder** to decode predictions back to human-readable labels  
+✅ Optimized for memory usage and fast inference  
 
-## Project Workflow
+---
 
-1. **Data Loading and Preprocessing**:
-   - The dataset is loaded from a Parquet file using the `pyarrow` engine.
-   - Categorical features like `Label` and `ClassLabel` are encoded into numeric values using `LabelEncoder` from `scikit-learn`.
-   - Missing values are checked and handled appropriately.
+## 🛠️ Technologies Used
 
-2. **Feature Selection**:
-   - Features are extracted by dropping the target columns (`Label` and `ClassLabel`) from the dataset.
-   - The `Label` column is selected as the target variable for the classification task.
+| Technology | Description |
+|----------|-------------|
+| **Python** | Core programming language |
+| **Pandas** | Data manipulation and preprocessing |
+| **Scikit-Learn** | Machine learning algorithms and evaluation metrics |
+| **Joblib** | Model and encoder serialization |
+| **Streamlit** | Building the interactive web dashboard |
+| **Seaborn & Matplotlib** | Data visualization tools |
+| **PyArrow** | Efficient Parquet file reading |
 
-3. **Model Training**:
-   - The dataset is split into training and testing sets using `train_test_split`.
-   - A Random Forest classifier (`RandomForestClassifier`) is used to train the model on the training data. The model is trained with parallel processing enabled by setting `n_jobs=-1` for faster training.
+---
 
-4. **Model Evaluation**:
-   - The model’s performance is evaluated using accuracy and classification metrics provided by `accuracy_score` and `classification_report` from `scikit-learn`.
+## 📁 File Structure
+Intrusion-Detection-System-Hacknova-2024/
+│
+├── README.md # This file
+├── app.py # Streamlit dashboard code
+├── train_model.py # ML model training script
+├── trained_model.joblib # Saved ML model
+├── label_encoder.joblib # Saved Label Encoder
+└── cic-collection.parquet # Dataset (CICIDS)
 
-5. **Model Saving**:
-   - The trained model and label encoder are saved using `joblib` for later use in the application (for example, in a Streamlit dashboard).
 
-6. **Dashboard Creation**:
-   - Streamlit is used to create an interactive web dashboard where users can upload their own data, visualize the attack types, and view real-time predictions of network traffic based on the trained model.
-   - Various plots and graphs are displayed using `Matplotlib`, `Seaborn`, and `Plotly` for a better understanding of the data and model performance.
+---
 
-## Requirements
+## 🧪 Dataset
 
-To install the required libraries, run the following command:
-```bash
-pip install pandas numpy scikit-learn joblib pyarrow streamlit matplotlib seaborn plotly
+The dataset used in this project is a **sampled version** of the `cic-collection.parquet` dataset (CICIDS), containing labeled network traffic records. We sampled **1% of the full dataset** to reduce training time while maintaining meaningful patterns for classification.
+
+For more information about the dataset: [CICIDS Dataset](https://www.unb.ca/cic/datasets/index.html) 
+
+---
+
+## 🏋️ Model Training
+
+### Steps:
+1. Load and sample the dataset (`cic-collection.parquet`)
+2. Preprocess data:
+   - Handle missing values
+   - Optimize memory usage (float32/int32 conversion)
+   - Encode categorical labels using `LabelEncoder`
+##📊 Results (Sample)
+Accuracy
+~90%
+Precision (avg)
+~0.88
+Recall (avg)
+~0.85
+F1-Score (avg)
+~0.86
+Note: Scores may vary depending on dataset sampling and model configuration. 
+
+##✅ Future Improvements
+Incorporate more features for better accuracy
+Use more advanced models like XGBoost or Deep Learning
+Add real-time packet capture and analysis
+Implement alerting mechanisms
+Deploy the dashboard online using Streamlit Sharing or Docker
+##❤️ Acknowledgements
+This project was developed for Hacknova 2024 .
+We thank the creators of the CICIDS dataset for providing valuable labeled network traffic data.
