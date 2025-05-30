@@ -47,19 +47,6 @@ This project includes two main components:
 
 ---
 
-##  File Structure
-Intrusion-Detection-System-Hacknova-2024/
-│
-├── README.md # This file
-├── app.py # Streamlit dashboard code
-├── train_model.py # ML model training script
-├── trained_model.joblib # Saved ML model
-├── label_encoder.joblib # Saved Label Encoder
-└── cic-collection.parquet # Dataset (CICIDS)
-
-
----
-
 ##  Dataset
 
 The dataset used in this project is a **sampled version** of the `cic-collection.parquet` dataset (CICIDS), containing labeled network traffic records. We sampled **1% of the full dataset** to reduce training time while maintaining meaningful patterns for classification.
