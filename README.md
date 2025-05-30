@@ -1,10 +1,10 @@
-# 🔒 Intrusion Detection System - Hacknova 2024
+# Intrusion Detection System - Hacknova 2024
 
 **Intrusion-Detection-System-Hacknova-2024** is a **Machine Learning-based Network Intrusion Detection System (IDS)** developed for the **Hacknova 2024** competition. This project leverages network traffic data to identify and classify various types of cyber attacks using a **Random Forest Classifier**, and provides an intuitive, interactive dashboard built with **Streamlit**.
 
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 The system detects different types of network intrusions by analyzing key features extracted from network flows such as:
 
@@ -22,7 +22,7 @@ This project includes two main components:
 
 ---
 
-## 📦 Features
+## Features
 
 ✅ Machine Learning Model trained using **Random Forest Classifier**  
 ✅ Predicts multiple types of network attacks  
@@ -33,7 +33,7 @@ This project includes two main components:
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 | Technology | Description |
 |----------|-------------|
@@ -47,7 +47,7 @@ This project includes two main components:
 
 ---
 
-## 📁 File Structure
+##  File Structure
 Intrusion-Detection-System-Hacknova-2024/
 │
 ├── README.md # This file
@@ -60,7 +60,7 @@ Intrusion-Detection-System-Hacknova-2024/
 
 ---
 
-## 🧪 Dataset
+##  Dataset
 
 The dataset used in this project is a **sampled version** of the `cic-collection.parquet` dataset (CICIDS), containing labeled network traffic records. We sampled **1% of the full dataset** to reduce training time while maintaining meaningful patterns for classification.
 
@@ -68,7 +68,7 @@ For more information about the dataset: [CICIDS Dataset](https://www.unb.ca/cic/
 
 ---
 
-## 🏋️ Model Training
+##  Model Training
 
 ### Steps:
 1. Load and sample the dataset (`cic-collection.parquet`)
@@ -76,7 +76,7 @@ For more information about the dataset: [CICIDS Dataset](https://www.unb.ca/cic/
    - Handle missing values
    - Optimize memory usage (float32/int32 conversion)
    - Encode categorical labels using `LabelEncoder`
-##📊 Results (Sample)
+## Results (Sample)
 Accuracy
 ~90%
 Precision (avg)
@@ -87,12 +87,12 @@ F1-Score (avg)
 ~0.86
 Note: Scores may vary depending on dataset sampling and model configuration. 
 
-##✅ Future Improvements
+## Future Improvements
 Incorporate more features for better accuracy
 Use more advanced models like XGBoost or Deep Learning
 Add real-time packet capture and analysis
 Implement alerting mechanisms
 Deploy the dashboard online using Streamlit Sharing or Docker
-##❤️ Acknowledgements
+## Acknowledgements
 This project was developed for Hacknova 2024 .
 We thank the creators of the CICIDS dataset for providing valuable labeled network traffic data.
