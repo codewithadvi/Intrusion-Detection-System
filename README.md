@@ -1,6 +1,6 @@
-# Intrusion Detection System - Hacknova 2024
+# Intrusion Detection System - 
 
-**Intrusion-Detection-System-Hacknova-2024** is a **Machine Learning-based Network Intrusion Detection System (IDS)** developed for the **Hacknova 2024** competition. This project leverages network traffic data to identify and classify various types of cyber attacks using a **Random Forest Classifier**, and provides an intuitive, interactive dashboard built with **Streamlit**.
+**Intrusion-Detection-System-Hacknova-2024** is a **Machine Learning-based Network Intrusion Detection System (IDS)**. This project leverages network traffic data to identify and classify various types of cyber attacks using a **Random Forest Classifier**, and provides an intuitive, interactive dashboard built with **Streamlit**.
 
 ---
 
@@ -82,6 +82,4 @@ Use more advanced models like XGBoost or Deep Learning
 Add real-time packet capture and analysis
 Implement alerting mechanisms
 Deploy the dashboard online using Streamlit Sharing or Docker
-## Acknowledgements
-This project was developed for Hacknova 2024 .
-We thank the creators of the CICIDS dataset for providing valuable labeled network traffic data.
+
